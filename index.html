@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Location</title>
+</head>
+<body>
+  <h1>Your Current Location</h1>
+  <p>Latitude: <span id="latitude"></span></p>
+  <p>Longitude: <span id="longitude"></span></p>
+
+  <script>
+    // 位置情報を取得する関数
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    // 位置情報を表示する関数
+    function showPosition(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      
+      document.getElementById("latitude").textContent = latitude;
+      document.getElementById("longitude").textContent = longitude;
+    }
+
+    // ページ読み込み時に位置情報を取得
+    window.onload = getLocation;
+  </script>
+</body>
+</html>
