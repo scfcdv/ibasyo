@@ -1,7 +1,7 @@
 <link rel="icon" href="https://scfcdv.github.io/homeweb2/favicon.ico">
 <title>現在地</title>
 <h1>緯度:<span id="latitude"></span></h1>
-<h1>経度: <span id="longitude"></span></h1>
+<h1>経度:<span id="longitude"></span></h1>
 <a href="https://earth.google.com/web/@" + latitude + a + longitude">Click me</a>
 <script>
 function getLocation() {
@@ -10,22 +10,10 @@ navigator.geolocation.getCurrentPosition(showPosition);
 } else {
 alert("Geolocation is not supported by this browser.");}}
 function showPosition(position) {
+const latitude = position.coords.latitude;
+const longitude = position.coords.longitude;
 var a = ,;
-var latitude = position.coords.latitude;
-var longitude = position.coords.longitude;
 document.getElementById("latitude").textContent = latitude;
 document.getElementById("longitude").textContent = longitude;}
 window.onload = getLocation;
 </script>
-<form>
-<button type="button" onclick="god()">新しいタブで表示</button>
-</form>
-<script>
-function god(){
-var UserInput = "https://earth.google.com/web/@" + 99999999999 + "," + 88888888888;
-var UserInput = UserInput.replace('99999999999', latitude);
-var UserInput = UserInput.replace('88888888888', longitude);
-}
-</script>
-document.write(UserInput)
-window.open(UserInput, '_blank')
