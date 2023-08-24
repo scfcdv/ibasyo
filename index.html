@@ -20,6 +20,6 @@ window.onload = getLocation;
 </form>
 <script>
 function god(){
-var UserInput = "https://earth.google.com/web/@" + latitude + "," + longitude;
+var UserInput = "https://earth.google.com/web/@" + position.coords.latitude + "," + position.coords.longitude;
 window.open(UserInput, '_blank')}
 </script>
