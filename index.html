@@ -9,8 +9,8 @@ navigator.geolocation.getCurrentPosition(showPosition);
 } else {
 alert("Geolocation is not supported by this browser.");}}
 function showPosition(position) {
-const latitude = position.coords.latitude;
-const longitude = position.coords.longitude;
+var latitude = position.coords.latitude;
+var longitude = position.coords.longitude;
 document.getElementById("latitude").textContent = latitude;
 document.getElementById("longitude").textContent = longitude;}
 window.onload = getLocation;
@@ -20,6 +20,6 @@ window.onload = getLocation;
 </form>
 <script>
 function god(){
-var UserInput = "https://earth.google.com/web/@" + position.coords.latitude + "," + position.coords.longitude;
+var UserInput = "https://earth.google.com/web/@" + latitude + "," + longitude;
 window.open(UserInput, '_blank')}
 </script>
