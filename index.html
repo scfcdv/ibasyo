@@ -3,6 +3,8 @@
 <h1>緯度:<span id="latitude"></span></h1>
 <h1>経度:<span id="longitude"></span></h1>
 <script>
+var latitude = position.coords.latitude;
+var longitude = position.coords.longitude;
 function getLocation() {
 if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(showPosition);
