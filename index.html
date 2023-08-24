@@ -15,3 +15,11 @@ document.getElementById("latitude").textContent = latitude;
 document.getElementById("longitude").textContent = longitude;}
 window.onload = getLocation;
 </script>
+<form>
+<button type="button" onclick="god()">新しいタブで表示</button>
+</form>
+<script>
+function god(){
+var UserInput = "https://earth.google.com/web/@" + latitude + "," + longitude;
+window.open(UserInput, '_blank')}
+</script>
