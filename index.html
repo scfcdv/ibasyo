@@ -2,10 +2,7 @@
 <title>現在地</title>
 <h1>緯度:<span id="latitude"></span></h1>
 <h1>経度:<span id="longitude"></span></h1>
-<script>
-var latitude = position.coords.latitude;
-var longitude = position.coords.longitude;
-</script>
+<button onclick=”aaaa()”>Click me</button>
 <script>
 function getLocation() {
 if (navigator.geolocation) {
@@ -13,8 +10,14 @@ navigator.geolocation.getCurrentPosition(showPosition);
 } else {
 alert("Geolocation is not supported by this browser.");}}
 function showPosition(position) {
+var latitude = position.coords.latitude;
+var longitude = position.coords.longitude;
 document.getElementById("latitude").textContent = latitude;
 document.getElementById("longitude").textContent = longitude;}
 window.onload = getLocation;
 </script>
-<a href="https://earth.google.com/web/@" + latitude">Click me</a>
+<script>
+function aaaa(){
+var myUrl = "https://earth.google.com/web/@" + latitude + "," + longitude;
+window.location.href = myUrl;}
+</script>
